@@ -242,7 +242,7 @@ class DownloadWithRetry {
         $headers = @{}
         if (-not ([string]::IsNullOrEmpty($authToken))) {
             $headers = @{
-                'Authorization' = $authToken
+                'Authorization' = ("token {0}" -f $authToken)
             }
         }
         if ($metadata) {
